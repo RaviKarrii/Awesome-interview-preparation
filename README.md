@@ -7,4 +7,4 @@ Please use "#" for Question and clean style for answer.An example can be found i
 Please create a folder and add question and answers relative to that folder
 
 
-I am trying to create a OpenSource Q/A Repo for us folks in helping preparation of Interviews.
+I am trying to create a OpenSource Q/A Repo to help in preparation of Interviews.
