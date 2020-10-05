@@ -39,10 +39,10 @@
 
 # Write an optimised function to return the nth entry in the fibonacci series.
 
-This method uses Matrix Exponentiation to calculate the Nth fibonacci number in O(log n) time complexity. [You can check this Hackerearth explanation for better understanding](https://www.hackerearth.com/practice/notes/fast-matrix-exponentiation-2/)
+This method uses Matrix to calculate the Nth fibonacci number in O(log n) time complexity. [You can check this Hackerearth explanation for better understanding](https://www.hackerearth.com/practice/notes/fast-matrix-exponentiation-2/)
 
 Fibonacci Series can be written as: **f(n) = f(n-1) + f(n-2)**
-To use Matrix Exponentiation we need to convert this additive equation to multiplicative equation involving metrices!
+To use Matrix we need to convert this additive equation to multiplicative equation involving metrices!
 This can be done like this:
 
 ```
@@ -66,8 +66,17 @@ Generally for an equation of the form **f(n) = a1*f(n-1) + a2*f(n-2) + ... + ak*
 So for our Fibonacci Series:
 
 ```
-Z = | 1  1 |
-    | 1  0 |
+Z = | 1  1 | => | f(3) | = | 1  1 | X | f(2) |
+    | 1  0 |    | f(2) |   | 1  0 |   | f(1) |
 ```
-
+Similarly,
 ```
+| f(4) | = | 1  1 |   | f(3) |  =>  | f(4) | = | 1  1 |^2       | f(2) |  =>  | f(n)   | = | 1  1 |^(n-2)       | f(2) |
+| f(3) |   | 1  0 | X | f(2) |      | f(3) |   | 1  0 |     X   | f(1) |      | f(n-1) |   | 1  0 |         X   | f(1) |
+```
+Since value of f(2) = f(1) = 1, we get to see an interesting pattern:
+```
+| f(n)    f(n-1) |  =  | 1  1 |^(n-1)
+| f(n-1)  f(n-2) |     | 1  0 |
+```
+Now this should be easy to implement. [You can check the code here]((https://github.com/RaviKarrii/Awesome-interview-preparation/blob/main/Python/supporting_files/abxsantos/fibonacci)
