@@ -1,7 +1,9 @@
-# What is the difference between list and tuples in Python?
- 1 .Lists are mutable i.e they can be edited.Tuples are immutable (tuples are lists which can’t be edited).
- 2 .Lists are slower than tuples.Tuples are faster than list.
- 3 .Syntax: list_1 = [10, ‘Chelsea’, 20].Syntax: tup_1 = (10, ‘Chelsea’ , 20)
+# What is the difference between list, tuples, and sets in Python?
+ 1. Lists and sets are mutable i.e they can be edited. Tuples are immutable (tuples are lists which can’t be edited).
+ 2. Lists and Tuples are ordered i.e. we can recall the order in which the elements were put in. Sets are unordered i.e. the order of elements is not constant. 
+ 3. List and tuples can contain duplicate elements. Sets automatically discard any duplicates.
+ 4. Lists are slower than tuples. Tuples are faster than list. Sets are especially fast at set operations (e.g. union, difference ...) and checking whether an element is contained in a set.
+ 5. Syntax: list_1 = [10, ‘Chelsea’, 20]. Syntax: tup_1 = (10, ‘Chelsea’ , 20). Syntax: set_1 = {10, ‘Chelsea’ , 20}
 
 # What are the key features of Python?
 1 .Python is an interpreted language. 
@@ -12,3 +14,8 @@
 # What is pep 8?
 PEP stands for Python Enhancement Proposal. It is a set of rules that specify how to format Python code for maximum readability.
 
+# What sorting algorithm is used in Python's `sort()` and `sorted()` functions?
+Python uses [Tim sort](https://en.wikipedia.org/wiki/Timsort)
+
+# What is the difference between a generator and an iterator
+Generator generates a new element each time that is required (e.g. each time the function is called). Iterator has all elements stored in advance. 
