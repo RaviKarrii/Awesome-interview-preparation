@@ -5,7 +5,7 @@
 
  To answer this question you can either make a iterative solution or a recursive solution.
 
- All the code listed here can be found in the [suppporting_files](https://github.com/RaviKarrii/Awesome-interview-preparation/blob/main/Python/supporting_files/abxsantos/fibonacci) folder.
+ All the code listed here can be found in the [supporting_files](https://github.com/RaviKarrii/Awesome-interview-preparation/blob/main/Python/supporting_files/abxsantos/fibonacci) folder.
 
  ### Iterative solution
  ```
@@ -37,3 +37,51 @@
 
  In this approach the main problem is the time required to return the value. To solve this, you can wrap the recursive_fibonacci function in a memoization function, improving it's next calls.
 
+# Write an optimised function to return the nth entry in the fibonacci series (Submitted by [Md Azharuddin](https://github.com/mdazharuddin1011999)).
+
+### Using Matrix Multiplication
+This method uses Matrix to calculate the Nth fibonacci number in O(log n) time complexity. [You can check this Hackerearth explanation for better understanding](https://www.hackerearth.com/practice/notes/fast-matrix-exponentiation-2/)
+
+Fibonacci Series can be written as: **f(n) = f(n-1) + f(n-2)**
+To use Matrix we need to convert this additive equation to multiplicative equation involving metrices!
+This can be done like this:
+
+```
+| f(n)   |  =  Z * | f(n-1) |
+| f(n-1) |         | f(n-2) |
+```
+Where Z in a 2X2 matrix
+
+Generally for an equation of the form **f(n) = a1*f(n-1) + a2*f(n-2) + ... + ak*f(n-k)**  "Z" matrix can be represented in the form:
+```
+| a1  a2  a3  ...  a(k-1)  ak|
+| 1   0   0   ...  0       0 |
+| 0   1   0   ...  0       0 |
+| 0   0   1   ...  0       0 |
+|              .             |
+|              .             |
+|              .             |
+| 0   0   0   ...  1       0 |
+```
+
+So for our Fibonacci Series:
+
+```
+Z = | 1  1 | => | f(3) | = | 1  1 | X | f(2) |
+    | 1  0 |    | f(2) |   | 1  0 |   | f(1) |
+```
+Similarly,
+```
+| f(4) | = | 1  1 |   | f(3) |  =>  | f(4) | = | 1  1 |^2       | f(2) |  =>  | f(n)   | = | 1  1 |^(n-2)       | f(2) |
+| f(3) |   | 1  0 | X | f(2) |      | f(3) |   | 1  0 |     X   | f(1) |      | f(n-1) |   | 1  0 |         X   | f(1) |
+```
+Since value of f(2) = f(1) = 1, we get to see an interesting pattern:
+```
+| f(n)    f(n-1) |  =  | 1  1 |^(n-1)
+| f(n-1)  f(n-2) |     | 1  0 |
+```
+Now this should be easy to implement. [You can check the code here](./supporting_files/mdazharuddin/fibonacci_matrix_exponentiation.py)
+
+### Using Pure Maths!
+f(n) = {[(√5 + 1)/2] ^ n} / √5  
+This formula will generate a value close to the nth fibonacci number. You can round it to obtain the Fibonacci number!
