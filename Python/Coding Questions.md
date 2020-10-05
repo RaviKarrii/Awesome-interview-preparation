@@ -79,4 +79,4 @@ Since value of f(2) = f(1) = 1, we get to see an interesting pattern:
 | f(n)    f(n-1) |  =  | 1  1 |^(n-1)
 | f(n-1)  f(n-2) |     | 1  0 |
 ```
-Now this should be easy to implement. [You can check the code here]((https://github.com/RaviKarrii/Awesome-interview-preparation/blob/main/Python/supporting_files/abxsantos/fibonacci)
+Now this should be easy to implement. [You can check the code here](./supporting_files/mdazharuddin/fibonacci_matrix_exponentiation.py)
