@@ -37,8 +37,9 @@
 
  In this approach the main problem is the time required to return the value. To solve this, you can wrap the recursive_fibonacci function in a memoization function, improving it's next calls.
 
-# Write an optimised function to return the nth entry in the fibonacci series.
+# Write an optimised function to return the nth entry in the fibonacci series (Submitted by [Md Azharuddin](https://github.com/mdazharuddin1011999)).
 
+### Using Matrix Multiplication
 This method uses Matrix to calculate the Nth fibonacci number in O(log n) time complexity. [You can check this Hackerearth explanation for better understanding](https://www.hackerearth.com/practice/notes/fast-matrix-exponentiation-2/)
 
 Fibonacci Series can be written as: **f(n) = f(n-1) + f(n-2)**
@@ -80,3 +81,7 @@ Since value of f(2) = f(1) = 1, we get to see an interesting pattern:
 | f(n-1)  f(n-2) |     | 1  0 |
 ```
 Now this should be easy to implement. [You can check the code here](./supporting_files/mdazharuddin/fibonacci_matrix_exponentiation.py)
+
+### Using Pure Maths!
+f(n) = {[(√5 + 1)/2] ^ n} / √5  
+This formula will generate a value close to the nth fibonacci number. You can round it to obtain the Fibonacci number!
