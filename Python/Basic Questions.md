@@ -19,3 +19,9 @@ Python uses [Tim sort](https://en.wikipedia.org/wiki/Timsort)
 
 # What is the difference between a generator and an iterator
 Generator generates a new element each time that is required (e.g. each time the function is called). Iterator has all elements stored in advance. 
+
+# What is a class static method ?
+A class static method denoted @staticmethod is a method that is bound to a class instead of an object. A call to it could be done without an object
+
+# What is a class class method ?
+A class class method denoted @classmethod don't need a reference to an object as for @staticmethod. Class methods are tied to a class and have their importance in an inheritance context
